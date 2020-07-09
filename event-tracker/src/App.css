@@ -9,8 +9,8 @@
   --alt-text-color: #FFFE00;
   --main-bg-color: #C8A2C8;
   --alt-bg-color: #7C3F7C;
-  --off-blue: #0080FF;
   --off-red: #FF2A00;
+  --off-blue: #0080FF;  /* possible offset color; not a part of the 'happy' collection. */
 }
 
 .App {
@@ -19,7 +19,7 @@
   margin: 0 auto;
   padding: 2.5vmin 2rem; 
   text-align: center;
-  color: white;
+  color: #FFFE00;
   /* border: 1px solid red; */
 }
 

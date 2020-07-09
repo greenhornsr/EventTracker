@@ -8,7 +8,7 @@ function App() {
         <h1>Event Tracker</h1>
       </header>
       <body>
-        <h2>TEST</h2>
+        <button>TEST</button>
         <p>HELLO</p>
       </body>
     </div>
