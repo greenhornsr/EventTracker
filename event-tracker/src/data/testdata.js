@@ -33,7 +33,7 @@ const location = ["Inside", "Outside"]
 
 // single event outline
 const lightHeadedEvent = {
-    "headache": true,               // boolean  options: "True" / "False"
+    "headache": true,               // boolean  options: "True" / "False"           ?(1, 0)?
     "severity": 5,                  // number   scale of 1-10? light = 1-3, medium = 4-7, heavy = 8-10...?
     "duration": 180,                // number   logged in seconds
     "waterconsumption": 2,          // number   whole number equivalent to 20oz 
