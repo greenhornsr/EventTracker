@@ -1,0 +1,36 @@
+/* All Progress Bars */
+progress {
+    /* Reset the default appearance */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* Determinate */
+progress[value] {
+    width: 20%;
+    /* height: 20px; */
+    /* Reset the default appearance */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* Indeterminate */
+progress:not([value]) {
+    /* Reset the default appearance */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+progress::-webkit-progress-bar {
+    background: #EEE;
+    box-shadow: 0 .2em .3em rgba(0,0,0,0.2) inset;
+    border-radius: .5em;
+}
+
+progress::-webkit-progress-value {
+    background-color: #0080FF;
+    border-radius: .5em;
+}

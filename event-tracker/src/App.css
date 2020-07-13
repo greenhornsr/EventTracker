@@ -37,8 +37,10 @@
   /* border: 1px solid red; */
 }
 
-.App body {
+.app-container {
+  padding: calc(10px + 2vmin);
   min-height: 80vh;
   font-size: calc(10px + 1vmin);
   background-color: var(--main-bg-color);
+    border: 1px solid red;
 }
