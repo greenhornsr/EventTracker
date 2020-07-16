@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import "./form.css"
+import "./../form.css"
 
 const EventList = () => {
     const [eventOccurrence, setEventOccurrence] = useState({
@@ -29,16 +29,15 @@ const EventList = () => {
     return (
         <div>
             <p>DAMN TEST!</p>
-            <section>
+            <section className="event-form-activatesec">
                 <param name="ddd" value="ddd"/><br/>
-                <label htmlFor="file">Downloading progress: </label>
                 {/* 
                     - is a progress bar the right display tool for this project?
                     - could use the progress bar to track daily events, leveraging state to track the DAY; resetting progress on date change; store daily progress in Database/app state.
                     - need to change the value to be app state value - from redux; not local state value. 
                 */}
-                <progress id="file" value={eventOccurrence.count} max="100" /><br/>
-
+                {/* <label htmlFor="file">Daily Log: {"\u00a0 \u00a0"}</label>
+                <progress id="file" value={eventOccurrence.count} max="100" /><br/> */}
                 <form action="">
                     <label htmlFor="occurrence">Did you have an EVENT? {"\u00a0 \u00a0"} </label>
                     <select required onChange={handleChange} name="occurrence" id="occurrence" value={eventOccurrence.occurrence} >

@@ -2,7 +2,8 @@ import React from 'react';
 import './App.css';
 
 // Component Import
-import EventList from './components/form/EventList';
+import DailyLog from './components/forms/dailylog/DailyLog';
+import EventList from './components/forms/EventOccurrence/EventList';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <h1>Event Tracker</h1>
       </header>
       <div className="app-container">
+        <DailyLog />
         <EventList />
         <button>SUBMIT</button>
       </div>
