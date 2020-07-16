@@ -3,7 +3,7 @@ import "./form.css"
 
 const EventList = () => {
     const [eventOccurrence, setEventOccurrence] = useState({
-                                                    occurrence : '', 
+                                                    occurrence : 'select', 
                                                     count: 0
                                                 })
 
