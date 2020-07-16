@@ -2,19 +2,37 @@ import React, {useState} from 'react'
 import "./form.css"
 
 const EventList = () => {
-    const [currState, setCurrState] = useState({value : ''})
+    const [eventOccurrence, setEventOccurrence] = useState({
+                                                    occurrence : '', 
+                                                    count: 0
+                                                })
 
-    // const setStateHelper = () => {
-        
-    // }
-
-    // change handler
+    // Change handler function
     const handleChange = (event) => {
         event.preventDefault()
-        {console.log("TEST: ", event)}
-        setCurrState({value : event.target.value})
-        console.log("currState: ", event.target.value)
+        setEventOccurrence({
+            occurrence : event.target.value, 
+            count: event.target.value === 'true' ? 
+            eventOccurrence.count += 1 : 
+            eventOccurrence.count = 0
+        })
+        // increaseEventCount()
+        // console.log("currState: ", event.target.value)
     }
+    console.log("State.Occurrence: ", eventOccurrence.occurrence)
+    console.log("current Count: ", eventOccurrence.count)
+
+    // const increaseEventCount = () => {
+    //     eventOccurrence.occurrence === true ? 
+    //     setEventOccurrence({...eventOccurrence, count: eventOccurrence.count += 1}) : 
+    //     setEventOccurrence({...eventOccurrence, count: eventOccurrence.count = 0})
+    //     // setEventOccurrence({...eventOccurrence, count : eventOccurrence.count += 1})
+    // }
+
+    // update State
+    // const setState = () => {
+    //     setCurrState = 
+    // }
     
     return (
         <div>
@@ -22,16 +40,21 @@ const EventList = () => {
             <section>
                 <param name="ddd" value="ddd"/><br/>
                 <label htmlFor="file">Downloading progress: </label>
-                <progress id="file" value="52" max="100" /><br/>
+                {/* 
+                    - is a progress bar the right display tool for this project?
+                    - could use the progress bar to track daily events, leveraging state to track the DAY; resetting progress on date change; store daily progress in Database/app state.
+                    - need to change the value to be app state value - from redux; not local state value. 
+                */}
+                <progress id="file" value={eventOccurrence.count} max="100" /><br/>
 
                 <form action="">
-                    <label htmlFor="occurrance">Did you have an EVENT? {"\u00a0 \u00a0"} </label>
-                    <select required onChange={handleChange} name="occurrance" id="occurrance" value={currState.value} >
+                    <label htmlFor="occurrence">Did you have an EVENT? {"\u00a0 \u00a0"} </label>
+                    <select required onChange={handleChange} name="occurrence" id="occurrence" value={eventOccurrence.occurrence} >
                         <option value="select" defaultValue >Please Select...</option>
                         <option value="true">YES</option>
-                        <option value="false">NO</option>
+                        {/* <option value="false">NO</option> */}
                     </select><br/>
-                    <button>Submit</button>
+                    {/* <button>Submit</button> */}
                 </form>
                 
             </section><br/>
