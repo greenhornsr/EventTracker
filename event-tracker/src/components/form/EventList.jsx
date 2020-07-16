@@ -16,20 +16,12 @@ const EventList = () => {
             eventOccurrence.count += 1 : 
             eventOccurrence.count = 0
         })
-        // increaseEventCount()
-        // console.log("currState: ", event.target.value)
     }
-    console.log("State.Occurrence: ", eventOccurrence.occurrence)
-    console.log("current Count: ", eventOccurrence.count)
+    // ****** CHECK STATE - REMOVE BEFORE DEPLOYMENT(#CLEANUP) ******
+    // console.log("State.Occurrence: ", eventOccurrence.occurrence)
+    // console.log("current Count: ", eventOccurrence.count)
 
-    // const increaseEventCount = () => {
-    //     eventOccurrence.occurrence === true ? 
-    //     setEventOccurrence({...eventOccurrence, count: eventOccurrence.count += 1}) : 
-    //     setEventOccurrence({...eventOccurrence, count: eventOccurrence.count = 0})
-    //     // setEventOccurrence({...eventOccurrence, count : eventOccurrence.count += 1})
-    // }
-
-    // update State
+    // Update APP State
     // const setState = () => {
     //     setCurrState = 
     // }
