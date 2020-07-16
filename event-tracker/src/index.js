@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 
 import { Provider } from 'react-redux';
 import { applyMiddleware, createStore, compose} from 'redux';
+import thunkMiddleware from 'redux-thunk';
 
 
 // import store from './store';
