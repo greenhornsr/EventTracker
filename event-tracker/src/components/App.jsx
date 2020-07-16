@@ -2,8 +2,8 @@ import React from 'react';
 import './App.css';
 
 // Component Import
-import DailyLog from './components/forms/dailylog/DailyLog';
-import EventList from './components/forms/EventOccurrence/EventList';
+import DailyLog from './forms/dailylog/DailyLog';
+import EventList from './forms/EventOccurrence/EventList';
 
 function App() {
   return (
