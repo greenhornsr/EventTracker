@@ -11,11 +11,11 @@ const initialState = {
 export default function reducer(state = initialState, action) {
     switch(action.type) {
         case ADD_OCCURRENCE_START: 
+        // console.log("action: ", action)
         return {
             ...state,
-            count: state.count += 1,
-            occurrence: true,
-            message: 'PLEASE COMPLETE FORM, THEN SUBMIT.'
+            count: state.count + action.payload.count,
+            occurrence: true
         }
         case ADD_OCCURRENCE_SUCCESS:
         return {

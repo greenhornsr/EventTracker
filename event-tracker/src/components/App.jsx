@@ -14,7 +14,7 @@ function App() {
       <div className="app-container">
         <DailyLog />
         <EventList />
-        <button>SUBMIT</button>
+        {/* <button>SUBMIT</button> */}
       </div>
     </div>
   );

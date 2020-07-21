@@ -3,31 +3,34 @@ import { connect } from 'react-redux';
 import { addOccurrence } from '../../../redux/actions';
 import "./../form.css"
 
-const EventList = () => {
+const EventList = (props) => {
     const [eventOccurrence, setEventOccurrence] = useState({
                                                     occurrence : 'select', 
                                                     count: 0
                                                 })
 
     // Change handler function
-    const handleChange = (event) => {
-        event.preventDefault()
+    const handleChange = (e) => {
+        e.preventDefault()
         setEventOccurrence({
-            occurrence : event.target.value, 
-            count: event.target.value === 'true' ? 
+            occurrence : e.target.value, 
+            count: e.target.value === 'true' ? 
             eventOccurrence.count += 1 : 
             eventOccurrence.count = 0
         })
-        addOccurrence(eventOccurrence.count)
     }
     // ****** CHECK STATE - REMOVE BEFORE DEPLOYMENT(#CLEANUP) ******
     // console.log("State.Occurrence: ", eventOccurrence.occurrence)
     // console.log("current Count: ", eventOccurrence.count)
 
     // Update APP State
-    // const setState = () => {
-    //     setCurrState = 
-    // }
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        props.addOccurrence({...eventOccurrence})
+        setEventOccurrence({occurrence: 'select',
+                            count: 0
+                            })
+    }
     
     return (
         <div>
@@ -41,14 +44,14 @@ const EventList = () => {
                 */}
                 {/* <label htmlFor="file">Daily Log: {"\u00a0 \u00a0"}</label>
                 <progress id="file" value={eventOccurrence.count} max="100" /><br/> */}
-                <form action="">
+                <form onSubmit={handleSubmit} action="">
                     <label htmlFor="occurrence">Did you have an EVENT? {"\u00a0 \u00a0"} </label>
                     <select required onChange={handleChange} name="occurrence" id="occurrence" value={eventOccurrence.occurrence} >
                         <option value="select" defaultValue >Please Select...</option>
                         <option value="true">YES</option>
                         {/* <option value="false">NO</option> */}
-                    </select><br/>
-                    {/* <button>Submit</button> */}
+                    </select><br/><br/>
+                    <button>Submit</button>
                 </form>
                 
             </section><br/>
