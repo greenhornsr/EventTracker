@@ -5,7 +5,7 @@ import thunkMiddleware from 'redux-thunk';
 
 import monitorReducersEnhancer from './enhancers/monitorReducer';
 import loggerMiddleware from './middleware/logger';
-import rootReducer from './reducers';
+import rootReducer from './redux/reducers';
 
 // exported function
 export default function  configureStore(preloadedState) {
