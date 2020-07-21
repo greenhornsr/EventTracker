@@ -1,4 +1,6 @@
 import React, {useState} from 'react'
+import { connect } from 'react-redux';
+import { addOccurrence } from '../../../redux/actions';
 import "./../form.css"
 
 const EventList = () => {
@@ -53,4 +55,11 @@ const EventList = () => {
     )
 };
 
-export default EventList;
+const mapStateToProps = state => ({
+    ...state
+})
+
+export default connect(
+    mapStateToProps, 
+    { addOccurrence }
+)(EventList);
