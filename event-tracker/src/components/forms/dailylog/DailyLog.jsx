@@ -1,8 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import "./../form.css"
 
 
-const DailyLog = () => {
+const DailyLog = (props) => {
     return (
         <section className="event-form-dailylogsec">
             {/* 
@@ -11,9 +12,13 @@ const DailyLog = () => {
                 - need to change the value to be app state value - from redux; not local state value. 
             */}
             <label htmlFor="file">Daily Log: {"\u00a0 \u00a0"}</label>
-            <progress id="file" value="52" max="100" /><br/>
+            <progress id="file" value={props.count} max="100" /><br/>
         </section>
     )
 };
 
-export default DailyLog;
+const mapStateToProps = state => ({
+    count: state.count
+})
+
+export default connect(mapStateToProps)(DailyLog);
