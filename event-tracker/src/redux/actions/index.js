@@ -5,8 +5,6 @@ export const ADD_OCCURRENCE_FAILURE = 'ADD_OCCURRENCE_FAILURE'
 
 // ACTION CREATOR - 
 export const addOccurrence = (eventState) => dispatch => {
-    // console.log("TEST")
-    // console.log("e state: ", eventState)
     dispatch({type: ADD_OCCURRENCE_START, payload: eventState})
     dispatch({type: ADD_OCCURRENCE_SUCCESS})
     if(eventState.occurrence === true) {
