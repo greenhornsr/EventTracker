@@ -57,11 +57,7 @@ const EventList = (props) => {
     )
 };
 
-const mapStateToProps = state => ({
-    ...state
-})
-
 export default connect(
-    mapStateToProps, 
+    null,
     { addOccurrence }
 )(EventList);

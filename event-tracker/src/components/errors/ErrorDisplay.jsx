@@ -12,14 +12,14 @@ const ErrorDisplay = (props) => {
         <section className="error-display-section">
             <p>{props.error}</p>
             <form onSubmit={handleSubmit} action="">
-                <button>Refresh</button>
+                <button>Try Again</button>
             </form>
         </section>
     )
 }
 
-const mapStateToProps = state => ({
-    ...state
+const mapStateToProps = ({error}) => ({
+    error: error
 })
 
 export default connect(mapStateToProps, { resetForm })(ErrorDisplay)
