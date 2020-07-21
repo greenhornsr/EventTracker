@@ -1,11 +1,13 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import './App.css';
 
 // Component Import
 import DailyLog from './forms/dailylog/DailyLog';
 import EventList from './forms/EventOccurrence/EventList';
+import ErrorDisplay from './errors/ErrorDisplay';
 
-function App() {
+function App(props) {
   return (
     <div className="App">
       <header className="App-header">
@@ -13,10 +15,14 @@ function App() {
       </header>
       <div className="app-container">
         <br/><DailyLog />
-        <br/><EventList />
+        {!props.error ? <><br/><EventList /></> : <><br/><ErrorDisplay /></>}
       </div>
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = ({error}) => ({
+    error: error
+})
+
+export default connect(mapStateToProps)(App);
