@@ -23,7 +23,7 @@ const EventList = (props) => {
     // console.log("State.Occurrence: ", eventOccurrence.occurrence)
     // console.log("current Count: ", eventOccurrence.count)
 
-    // Update APP State
+    // Handle Redux APP State
     const handleSubmit = (e) => {
         e.preventDefault()
         props.addOccurrence({...eventOccurrence})
@@ -34,7 +34,6 @@ const EventList = (props) => {
     
     return (
         <div>
-            <p>DAMN TEST!</p>
             <section className="event-form-activatesec">
                 <param name="ddd" value="ddd"/><br/>
                 {/* 
@@ -53,7 +52,6 @@ const EventList = (props) => {
                     </select><br/><br/>
                     <button>Submit</button>
                 </form>
-                
             </section><br/>
         </div>
     )

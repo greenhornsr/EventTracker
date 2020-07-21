@@ -12,9 +12,8 @@ function App() {
         <h1>Event Tracker</h1>
       </header>
       <div className="app-container">
-        <DailyLog />
-        <EventList />
-        {/* <button>SUBMIT</button> */}
+        <br/><DailyLog />
+        <br/><EventList />
       </div>
     </div>
   );
