@@ -2,10 +2,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 import './App.css';
 
-// Component Import
+// Component
 import DailyLog from './forms/dailylog/DailyLog';
-import EventList from './forms/EventOccurrence/EventList';
-import ErrorDisplay from './errors/ErrorDisplay';
+// import EventList from './forms/EventOccurrence/EventList';
+// import ErrorDisplay from './errors/ErrorDisplay';
+import FormContainer from './forms/FormContainer';
 
 function App(props) {
   return (
@@ -15,7 +16,8 @@ function App(props) {
       </header>
       <div className="app-container">
         <br/><DailyLog />
-        {!props.error ? <><br/><EventList /></> : <><br/><ErrorDisplay /></>}
+        <br/><FormContainer />
+        {/* {!props.error ? <><br/><EventList /></> : <><br/><ErrorDisplay /></>} */}
       </div>
     </div>
   );
