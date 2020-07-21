@@ -21,8 +21,8 @@ function App(props) {
   );
 }
 
-const mapStateToProps = ({error}) => ({
-    error: error
+const mapStateToProps = (state) => ({
+    ...state
 })
 
 export default connect(mapStateToProps)(App);
