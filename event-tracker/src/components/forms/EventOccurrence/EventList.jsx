@@ -18,6 +18,7 @@ const EventList = () => {
             eventOccurrence.count += 1 : 
             eventOccurrence.count = 0
         })
+        addOccurrence(eventOccurrence.count)
     }
     // ****** CHECK STATE - REMOVE BEFORE DEPLOYMENT(#CLEANUP) ******
     // console.log("State.Occurrence: ", eventOccurrence.occurrence)

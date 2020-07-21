@@ -3,7 +3,7 @@ import { ADD_OCCURRENCE_START, ADD_OCCURRENCE_SUCCESS, ADD_OCCURRENCE_FAILURE } 
 
 const initialState = {
     count: 0,
-    active: false,
+    occurrence: false,
     error: '',
     message: ''
 }
@@ -14,19 +14,19 @@ export default function reducer(state = initialState, action) {
         return {
             ...state,
             count: state.count += 1,
-            active: true,
+            occurrence: true,
             message: 'PLEASE COMPLETE FORM, THEN SUBMIT.'
         }
         case ADD_OCCURRENCE_SUCCESS:
         return {
             ...state,
-            active: false,
+            occurrence: false,
             message: 'SUCCESSFULLY ADDED EVENT!'
         }
         case ADD_OCCURRENCE_FAILURE:
         return {
             ...state,
-            active: false,
+            occurrence: false,
             error: 'ADD FAILED.  PLEASE MAKE SURE TO FILL OUT ALL REQUIRED INFORMATION!',
             message: ''
         }
