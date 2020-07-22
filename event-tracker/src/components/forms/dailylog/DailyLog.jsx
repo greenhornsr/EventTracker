@@ -17,8 +17,8 @@ const DailyLog = (props) => {
     )
 };
 
-const mapStateToProps = ({count}) => ({
-    count: count
+const mapStateToProps = ({occurrences}) => ({
+    count: occurrences.count
 })
 
 export default connect(mapStateToProps)(DailyLog);

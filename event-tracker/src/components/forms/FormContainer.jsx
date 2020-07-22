@@ -14,8 +14,8 @@ const FormContainer = (props) => {
     )
 }
 
-const mapStateToProps = ({error}) => ({
-    error: error
+const mapStateToProps = ({occurrences}) => ({
+    error: occurrences.error
 })
 
 export default connect(mapStateToProps)(FormContainer);
