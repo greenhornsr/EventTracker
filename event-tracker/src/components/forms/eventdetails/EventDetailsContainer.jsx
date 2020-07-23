@@ -4,7 +4,7 @@ import { addEventDetails, resetForm } from '../../../redux/actions';
 
 // Form Components
 import EventIntensity from './EventIntensity';
-import EventHeadache from './EventHeadache';
+import EventHeadache from './headache/EventHeadache';
 
 const EventDetailsContainer = (props) => {
     const [eventDetails, setEventDetails] = useState({
