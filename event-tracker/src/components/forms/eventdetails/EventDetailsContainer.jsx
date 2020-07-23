@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { addEventDetails } from '../../../redux/actions';
+import { addEventDetails, resetForm } from '../../../redux/actions';
 
 // Form Components
 import EventIntensity from './EventIntensity';
@@ -20,6 +20,7 @@ const EventDetailsContainer = (props) => {
                             headache: 'select',
                             duration: 0
                         })
+        props.resetForm()
     }
     
     // console.log("*** FORM STATE *** : ", eventDetails)
@@ -35,4 +36,4 @@ const EventDetailsContainer = (props) => {
     )
 }
 
-export default connect(null, {addEventDetails})(EventDetailsContainer);
+export default connect(null, {addEventDetails, resetForm})(EventDetailsContainer);
