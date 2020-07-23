@@ -13,8 +13,7 @@ const FormContainer = (props) => {
         <div className="form-container">
             {props.error && <><br/><ErrorDisplay /></>}
             {!props.error && !props.occurrence && <><br/><EventList /></>}
-            {!props.error && props.occurrence &&
-                <EventDetailsContainer />}
+            {!props.error && props.occurrence && <EventDetailsContainer />}
         </div>
     )
 }

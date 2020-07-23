@@ -1,6 +1,26 @@
+.form-container {
+    display: flex;
+    justify-content: center;
+}
+
 /* .event-form-activatesec {
-    border: 1px solid red;
+    border: 1px solid green;
 } */
+
+.event-details-container {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    text-align: justify;
+    /* border: 1px solid blue; */
+}
+
+.edc-button {
+    padding: .5em;
+    font-size: 1em;
+    font-weight: bold;
+    background-color: var(--main-text-color);
+}
 
 /* All Progress Bars */
 progress {

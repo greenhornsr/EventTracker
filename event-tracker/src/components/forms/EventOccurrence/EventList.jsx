@@ -49,7 +49,7 @@ const EventList = (props) => {
                         <option value="true">YES</option>
                         {/* <option value="false">NO</option> */}
                     </select><br/><br/>
-                    <button>Submit</button>
+                    <button className="edc-button">Submit</button>
                 </form>
             </section><br/>
         </div>
