@@ -35,7 +35,6 @@ const EventList = (props) => {
     return (
         <div>
             <section className="event-form-activatesec">
-                <param name="ddd" value="ddd"/><br/>
                 {/* 
                     - is a progress bar the right display tool for this project?
                     - could use the progress bar to track daily events, leveraging state to track the DAY; resetting progress on date change; store daily progress in Database/app state.
@@ -44,7 +43,7 @@ const EventList = (props) => {
                 {/* <label htmlFor="file">Daily Log: {"\u00a0 \u00a0"}</label>
                 <progress id="file" value={eventOccurrence.count} max="100" /><br/> */}
                 <form onSubmit={handleSubmit} action="">
-                    <label htmlFor="occurrence">Did you have an EVENT? {"\u00a0 \u00a0"} </label>
+                    <label htmlFor="occurrence">Did you have an event? {"\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0"} </label>
                     <select required onChange={handleChange} name="occurrence" id="occurrence" value={eventOccurrence.occurrence} >
                         <option value="select" defaultValue >Please Select...</option>
                         <option value="true">YES</option>

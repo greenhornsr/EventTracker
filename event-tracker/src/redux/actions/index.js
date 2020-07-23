@@ -21,3 +21,16 @@ export const RESET_FORM_SUCCESS = 'RESET_FORM_SUCCESS'
 export const resetForm = () => dispatch => {
     dispatch({type: RESET_FORM_START})
 }
+
+
+// ADD_EVENT_DETAILS ACTIONS
+export const ADD_EVENT_DETAILS_START = 'ADD_EVENT_DETAILS_START'
+export const ADD_EVENT_DETAILS_SUCCESS = 'ADD_EVENT_DETAILS_SUCCESS'
+export const ADD_EVENT_DETAILS_FAILURE = 'ADD_EVENT_DETAILS_FAILURE'
+
+// ADD_EVENT_DETAILS ACTION CREATOR - 
+export const addEventDetails = (formDetailState) => dispatch => {
+    dispatch({type: ADD_EVENT_DETAILS_START})
+    dispatch({type: ADD_EVENT_DETAILS_SUCCESS})
+    // dispatch({type: ADD_EVENT_DETAILS_FAILURE})
+}

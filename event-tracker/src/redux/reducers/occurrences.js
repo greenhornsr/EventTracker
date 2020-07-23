@@ -18,7 +18,7 @@ export default function occurrences(state = initialState, action) {
         case ADD_OCCURRENCE_SUCCESS:
         return {
             ...state,
-            occurrence: false,
+            // occurrence: false,
             message: 'SUCCESSFULLY ADDED EVENT!'
         }
         case ADD_OCCURRENCE_FAILURE:
