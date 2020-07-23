@@ -14,13 +14,14 @@ const EventDetailsContainer = (props) => {
         e.preventDefault()
         props.addEventDetails({...eventDetails})
         setEventDetails({intensity: 'select',
-                            })
+                        })
     }
     
     return (
         <div className="event-details-container">
             <form onSubmit={handleSubmit} action="">
-                <EventIntensity />
+                <br/><EventIntensity eventDetails={eventDetails} setEventDetails={setEventDetails} />
+                <br/><button>SUBMIT</button>
             </form>
         </div>
     )

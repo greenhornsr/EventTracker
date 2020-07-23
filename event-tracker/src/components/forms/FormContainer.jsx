@@ -8,10 +8,13 @@ import EventDetailsContainer from './eventdetails/EventDetailsContainer';
 
 
 const FormContainer = (props) => {
+
     return (
         <div className="form-container">
-            {!props.error && !props.occurrence ? <><br/><EventList /></> : <><br/><ErrorDisplay /></>}
-            {!props.error && props.occurrence && <EventDetailsContainer /> }
+            {props.error && <><br/><ErrorDisplay /></>}
+            {!props.error && !props.occurrence && <><br/><EventList /></>}
+            {!props.error && props.occurrence &&
+                <EventDetailsContainer />}
         </div>
     )
 }
