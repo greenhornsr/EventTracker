@@ -31,7 +31,9 @@ export default function occurrences(state = initialState, action) {
         case RESET_FORM_START: 
         return {
             ...state,
+            occurrence: false,
             error: '',
+            message: ''
         }
         default: return state;
     }
