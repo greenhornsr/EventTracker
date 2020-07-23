@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-
+import { connect } from 'react-redux';
+import { addEventDetails } from '../../../redux/actions';
 
 // Form Components
 import EventIntensity from './EventIntensity';
@@ -27,4 +28,4 @@ const EventDetailsContainer = (props) => {
     )
 }
 
-export default EventDetailsContainer;
+export default connect(null, {addEventDetails})(EventDetailsContainer);

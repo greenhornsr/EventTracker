@@ -6,7 +6,7 @@ const initialState = {
     message: ''
 }
 
-export default function occurrences(state = initialState, action) {
+export default function eventdetails(state = initialState, action) {
     switch(action.type) {
         case ADD_EVENT_DETAILS_START: 
         return {

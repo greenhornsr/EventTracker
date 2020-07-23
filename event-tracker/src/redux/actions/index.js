@@ -30,7 +30,7 @@ export const ADD_EVENT_DETAILS_FAILURE = 'ADD_EVENT_DETAILS_FAILURE'
 
 // ADD_EVENT_DETAILS ACTION CREATOR - 
 export const addEventDetails = (formDetailState) => dispatch => {
-    dispatch({type: ADD_EVENT_DETAILS_START})
+    dispatch({type: ADD_EVENT_DETAILS_START, payload: formDetailState})
     dispatch({type: ADD_EVENT_DETAILS_SUCCESS})
     // dispatch({type: ADD_EVENT_DETAILS_FAILURE})
 }
