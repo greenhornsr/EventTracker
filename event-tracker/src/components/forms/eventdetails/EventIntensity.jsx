@@ -1,5 +1,4 @@
 import React from 'react';
-import eventdetails from '../../../redux/reducers/eventdetails';
 
 const EventIntensity = (props) => {
     // Change handler function

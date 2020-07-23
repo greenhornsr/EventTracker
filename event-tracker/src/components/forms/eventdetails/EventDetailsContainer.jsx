@@ -5,7 +5,6 @@ import { addEventDetails } from '../../../redux/actions';
 // Form Components
 import EventIntensity from './EventIntensity';
 import EventHeadache from './EventHeadache';
-import eventdetails from '../../../redux/reducers/eventdetails';
 
 const EventDetailsContainer = (props) => {
     const [eventDetails, setEventDetails] = useState({
@@ -18,7 +17,8 @@ const EventDetailsContainer = (props) => {
         e.preventDefault()
         props.addEventDetails({...eventDetails})
         setEventDetails({   intensity: 'select',
-                            headache: 'select'
+                            headache: 'select',
+                            duration: 0
                         })
     }
     

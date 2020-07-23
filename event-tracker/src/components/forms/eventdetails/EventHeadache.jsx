@@ -1,5 +1,5 @@
 import React from 'react';
-import eventdetails from '../../../redux/reducers/eventdetails';
+import EHeadacheDuration from './EHeadacheDuration';
 
 const EventHeadache = (props) => {
     // Change handler function
@@ -21,6 +21,8 @@ const EventHeadache = (props) => {
                 <option value="Severe">Severe</option>
                 <option value="No">No</option>
             </select><br/>
+            {props.eventDetails.headache !== 'select' && 
+            props.eventDetails.headache !== 'No' && <EHeadacheDuration eventDetails={props.eventDetails} setEventDetails={props.setEventDetails} />}
         </>
     )
 }
