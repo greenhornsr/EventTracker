@@ -2,6 +2,7 @@ import { ADD_EVENT_DETAILS_START, ADD_EVENT_DETAILS_SUCCESS, ADD_EVENT_DETAILS_F
 
 const initialState = {
     intensity: 'select',
+    headache: 'select',
     error: '',
     message: ''
 }
@@ -11,7 +12,8 @@ export default function eventdetails(state = initialState, action) {
         case ADD_EVENT_DETAILS_START: 
         return {
             ...state,
-            intensity: action.payload.intensity
+            intensity: action.payload.intensity,
+            headache: action.payload.headache
         }
         case ADD_EVENT_DETAILS_SUCCESS:
         return {
