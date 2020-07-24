@@ -4,6 +4,7 @@ const initialState = {
     intensity: 'select',
     headache: 'select',
     duration: 0,
+    waterconsumption: 0,
     error: '',
     message: ''
 }
@@ -15,7 +16,8 @@ export default function eventdetails(state = initialState, action) {
             ...state,
             intensity: action.payload.intensity,
             headache: action.payload.headache, 
-            duration: action.payload.duration
+            duration: action.payload.duration,
+            waterconsumption: action.payload.waterconsumption
         }
         case ADD_EVENT_DETAILS_SUCCESS:
         return {
@@ -23,6 +25,7 @@ export default function eventdetails(state = initialState, action) {
             intensity: 'select',
             headache: 'select',
             duration: 0,
+            waterconsumption: 0,
             message: 'SUCCESSFULLY ADDED EVENT!'
         }
         case ADD_EVENT_DETAILS_FAILURE:
