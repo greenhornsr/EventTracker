@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { addEventDetails, resetForm } from '../../../redux/actions';
+
+// Dynamic Component Data
 import { waterConsumptionData } from '../../../data/componentdata';
 import { physicalActivityData } from '../../../data/componentdata';
 
-// Form Components
+// FORM COMPONENTS
 import EventIntensity from './EventIntensity';
 import EventHeadache from './headache/EventHeadache';
+// SelectWithOptions Components
 import WaterConsumption from '../../SelectWithOptions';
 import PhysicalActivity from '../../SelectWithOptions';
 
