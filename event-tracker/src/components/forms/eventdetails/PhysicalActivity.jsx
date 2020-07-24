@@ -1,25 +1,29 @@
 import React from 'react';
+import { physicalActivityData } from '../../../data/componentdata';
 
-// Reusuable set up...I've been doing this wrong...One file per form drop down.  :(
 const PhysicalActivity = (props) => {
+
+    // Destructure Declaration of imported Component Data / Info
+    const {componentName, question, maxOptions} = physicalActivityData
+
     const handleChange = (e) => {
         e.preventDefault()
         props.setEventDetails({
             ...props.eventDetails,
-            [props.compName] : e.target.value
+            [componentName] : e.target.value
         })
     }
 
     // generate dynamic array
-    const max = Array.from({length: Number(props.maxOptions)+1}, (_, index) => index)
+    const max = Array.from({length: maxOptions+1}, (_, i) => `${i} hours`)
 
     return (
         <>
-            <label htmlFor={props.compName}>Hours of Physical Activity? </label>
-            <select required onChange={handleChange} name={props.compName} id={props.compName} value={props.eventDetails[props.compName]} >
+            <label htmlFor={componentName}>{question} </label>
+            <select required onChange={handleChange} name={componentName} id={componentName} value={props.eventDetails[componentName]} >
                 <option value="select" defaultValue >Please Select...</option>
                 {max.map(num => {
-                    return <option key={num} value={num}>{num} hours</option> 
+                    return <option key={num} value={num}>{num}</option> 
                 })}
             </select><br/>
         </>

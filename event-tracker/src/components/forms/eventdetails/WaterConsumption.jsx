@@ -1,24 +1,28 @@
 import React from 'react';
+import { waterConsumptionData } from '../../../data/componentdata';
 
 const WaterConsumption = (props) => {
+
+    const {componentName, question, maxOptions} = waterConsumptionData
 
     const handleChange = (e) => {
         e.preventDefault()
         props.setEventDetails({
             ...props.eventDetails,
-            waterconsumption : e.target.value,
+            [componentName] : e.target.value,
         })
     }
-
-    const max = [1,2,3,4,5,6,7,8];
+    
+    // generate dynamic array
+    const max = Array.from({length: maxOptions+1}, (_, i) => `${i} / ${i * 26} oz`)
 
     return (
         <>
-            <label htmlFor="waterconsumption">How many 26(oz) WATER bottles did you drink? </label>
-            <select required onChange={handleChange} name="waterconsumption" id="waterconsumption" value={props.eventDetails.waterconsumption} >
+            <label htmlFor={componentName}>{question}</label>
+            <select required onChange={handleChange} name={componentName} id={componentName} value={props.eventDetails[componentName]} >
                 <option value="select" defaultValue >Please Select...</option>
                 {max.map(num => {
-                    return <option key={num} value={num}>{num} / {num * 26}oz</option> 
+                    return <option key={num} value={num}>{num}</option> 
                 })}
             </select><br/>
         </>

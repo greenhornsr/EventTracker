@@ -3,8 +3,8 @@ import { ADD_EVENT_DETAILS_START, ADD_EVENT_DETAILS_SUCCESS, ADD_EVENT_DETAILS_F
 const initialState = {
     intensity: 'select',
     headache: 'select',
-    duration: 0,
-    waterconsumption: 0,
+    duration: 'select',
+    waterconsumption: 'select',
     error: '',
     message: ''
 }
@@ -24,8 +24,8 @@ export default function eventdetails(state = initialState, action) {
             ...state,
             intensity: 'select',
             headache: 'select',
-            duration: 0,
-            waterconsumption: 0,
+            duration: 'select',
+            waterconsumption: 'select',
             message: 'SUCCESSFULLY ADDED EVENT!'
         }
         case ADD_EVENT_DETAILS_FAILURE:

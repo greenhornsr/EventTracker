@@ -21,10 +21,11 @@ const EventDetailsContainer = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         props.addEventDetails({...eventDetails})
-        setEventDetails({   intensity: 'select',
+        setEventDetails({   
+                            intensity: 'select',
                             headache: 'select',
-                            duration: 0,
-                            waterconsumption: 0,
+                            duration: 'select',
+                            waterconsumption: 'select',
                             physicalactivity: 'select'
                         })
         props.resetForm()
@@ -37,9 +38,10 @@ const EventDetailsContainer = (props) => {
             <form onSubmit={handleSubmit} action="">
                 <EventIntensity eventDetails={eventDetails} setEventDetails={setEventDetails} />
                 <EventHeadache eventDetails={eventDetails} setEventDetails={setEventDetails} />
+                {/* WaterConsumption is rendered with Dynamic reusability in mind.  However, considering the way I am adding measurements to the rendered options content, More work would need done to make this truly reusable. */}
                 <WaterConsumption eventDetails={eventDetails} setEventDetails={setEventDetails} />
                 {/* PhysicalActivity Component is First Rendered REUSABLE COMPONENT! */}
-                <PhysicalActivity compName='physactivity' maxOptions='5' eventDetails={eventDetails} setEventDetails={setEventDetails} />
+                <PhysicalActivity eventDetails={eventDetails} setEventDetails={setEventDetails} />
                 <br/><button className="edc-button">SUBMIT</button>
             </form>
         </div>
