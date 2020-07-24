@@ -13,7 +13,7 @@ const EventHeadache = (props) => {
 
     return (
         <>
-            <label htmlFor="intensity">Headache?  If YES, select severity.{"\u00a0 \u00a0"} </label>
+            <label htmlFor="intensity">Headache?  If YES, select severity. </label>
             <select required onChange={handleChange} name="intensity" id="intensity" value={props.eventDetails.headache} >
                 <option value="select" defaultValue >Please Select...</option>
                 <option value="Light">Light</option>

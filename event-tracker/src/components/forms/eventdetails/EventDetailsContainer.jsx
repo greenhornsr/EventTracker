@@ -5,6 +5,7 @@ import { addEventDetails, resetForm } from '../../../redux/actions';
 // Form Components
 import EventIntensity from './EventIntensity';
 import EventHeadache from './headache/EventHeadache';
+import WaterConsumption from './WaterConsumption';
 
 const EventDetailsContainer = (props) => {
     const [eventDetails, setEventDetails] = useState({
@@ -30,6 +31,7 @@ const EventDetailsContainer = (props) => {
             <form onSubmit={handleSubmit} action="">
                 <EventIntensity eventDetails={eventDetails} setEventDetails={setEventDetails} />
                 <EventHeadache eventDetails={eventDetails} setEventDetails={setEventDetails} />
+                <WaterConsumption eventDetails={eventDetails} setEventDetails={setEventDetails} />
                 <br/><button className="edc-button">SUBMIT</button>
             </form>
         </div>
