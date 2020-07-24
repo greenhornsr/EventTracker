@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { addEventDetails, resetForm } from '../../../redux/actions';
+import { waterConsumptionData } from '../../../data/componentdata';
+import { physicalActivityData } from '../../../data/componentdata';
 
 // Form Components
 import EventIntensity from './EventIntensity';
 import EventHeadache from './headache/EventHeadache';
-import WaterConsumption from './WaterConsumption';
-import PhysicalActivity from './PhysicalActivity';
+import WaterConsumption from '../../SelectWithOptions';
+import PhysicalActivity from '../../SelectWithOptions';
 
 const EventDetailsContainer = (props) => {
     const [eventDetails, setEventDetails] = useState({
@@ -39,9 +41,9 @@ const EventDetailsContainer = (props) => {
                 <EventIntensity eventDetails={eventDetails} setEventDetails={setEventDetails} />
                 <EventHeadache eventDetails={eventDetails} setEventDetails={setEventDetails} />
                 {/* WaterConsumption is rendered with Dynamic reusability in mind.  However, considering the way I am adding measurements to the rendered options content, More work would need done to make this truly reusable. */}
-                <WaterConsumption eventDetails={eventDetails} setEventDetails={setEventDetails} />
+                <WaterConsumption componentData={waterConsumptionData} eventDetails={eventDetails} setEventDetails={setEventDetails} />
                 {/* PhysicalActivity Component is First Rendered REUSABLE COMPONENT! */}
-                <PhysicalActivity eventDetails={eventDetails} setEventDetails={setEventDetails} />
+                <PhysicalActivity componentData={physicalActivityData} eventDetails={eventDetails} setEventDetails={setEventDetails} />
                 <br/><button className="edc-button">SUBMIT</button>
             </form>
         </div>

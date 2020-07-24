@@ -1,22 +1,20 @@
 import React from 'react';
-import { physicalActivityData } from '../../../data/componentdata';
 
-const PhysicalActivity = (props) => {
+const SelectWithOptions = (props) => {
 
-    // Destructure Declaration of imported Component Data / Info
-    const {componentName, question, maxOptions} = physicalActivityData
+    const {componentName, question, maxOptions} = props.componentData
 
     const handleChange = (e) => {
         e.preventDefault()
         props.setEventDetails({
             ...props.eventDetails,
-            [componentName] : e.target.value
+            [componentName] : e.target.value,
         })
     }
 
     return (
         <>
-            <label htmlFor={componentName}>{question} </label>
+            <label htmlFor={componentName}>{question}</label>
             <select required onChange={handleChange} name={componentName} id={componentName} value={props.eventDetails[componentName]} >
                 <option value="select" defaultValue >Please Select...</option>
                 {maxOptions.map(el => {
@@ -27,4 +25,4 @@ const PhysicalActivity = (props) => {
     )
 }
 
-export default PhysicalActivity;
+export default SelectWithOptions;
