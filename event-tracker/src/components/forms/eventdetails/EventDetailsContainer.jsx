@@ -6,11 +6,15 @@ import { addEventDetails, resetForm } from '../../../redux/actions';
 import EventIntensity from './EventIntensity';
 import EventHeadache from './headache/EventHeadache';
 import WaterConsumption from './WaterConsumption';
+import PhysicalActivity from './PhysicalActivity';
 
 const EventDetailsContainer = (props) => {
     const [eventDetails, setEventDetails] = useState({
                                                 intensity: 'select', 
-                                                headache: 'select'
+                                                headache: 'select',
+                                                duration: 0,
+                                                waterconsumption: 0,
+                                                physicalactivity: 'select'
                                             })
     
     // Handle Redux APP State
@@ -19,7 +23,9 @@ const EventDetailsContainer = (props) => {
         props.addEventDetails({...eventDetails})
         setEventDetails({   intensity: 'select',
                             headache: 'select',
-                            duration: 0
+                            duration: 0,
+                            waterconsumption: 0,
+                            physicalactivity: 'select'
                         })
         props.resetForm()
     }
@@ -32,6 +38,8 @@ const EventDetailsContainer = (props) => {
                 <EventIntensity eventDetails={eventDetails} setEventDetails={setEventDetails} />
                 <EventHeadache eventDetails={eventDetails} setEventDetails={setEventDetails} />
                 <WaterConsumption eventDetails={eventDetails} setEventDetails={setEventDetails} />
+                {/* PhysicalActivity Component is First Rendered REUSABLE COMPONENT! */}
+                <PhysicalActivity compName='physactivity' maxOptions='5' eventDetails={eventDetails} setEventDetails={setEventDetails} />
                 <br/><button className="edc-button">SUBMIT</button>
             </form>
         </div>

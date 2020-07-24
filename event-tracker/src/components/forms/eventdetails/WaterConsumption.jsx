@@ -10,7 +10,7 @@ const WaterConsumption = (props) => {
         })
     }
 
-    const max = [1,2,3,4,5,6];
+    const max = [1,2,3,4,5,6,7,8];
 
     return (
         <>
@@ -18,7 +18,7 @@ const WaterConsumption = (props) => {
             <select required onChange={handleChange} name="waterconsumption" id="waterconsumption" value={props.eventDetails.waterconsumption} >
                 <option value="select" defaultValue >Please Select...</option>
                 {max.map(num => {
-                    return <option key={num} value={num}>{num}</option> 
+                    return <option key={num} value={num}>{num} / {num * 26}oz</option> 
                 })}
             </select><br/>
         </>
