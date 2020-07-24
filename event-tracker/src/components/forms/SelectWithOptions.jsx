@@ -1,8 +1,9 @@
 import React from 'react';
 
 const SelectWithOptions = (props) => {
-
-    const {componentName, question, maxOptions} = props.componentData
+    // componentData is Dynamic Component Data; created/stored in componentdata.js
+    // componentData property should be passed to the SelectWithOptions component
+    const {componentName, question, arrOptions} = props.componentData
 
     const handleChange = (e) => {
         e.preventDefault()
@@ -14,10 +15,10 @@ const SelectWithOptions = (props) => {
 
     return (
         <>
-            <label htmlFor={componentName}>{question}</label>
+            <label htmlFor={componentName}>{question} </label>
             <select required onChange={handleChange} name={componentName} id={componentName} value={props.eventDetails[componentName]} >
                 <option value="select" defaultValue >Please Select...</option>
-                {maxOptions.map(el => {
+                {arrOptions.map(el => {
                     return <option key={el} value={el}>{el}</option> 
                 })}
             </select><br/>

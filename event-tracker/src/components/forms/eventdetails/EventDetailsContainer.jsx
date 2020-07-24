@@ -3,15 +3,19 @@ import { connect } from 'react-redux';
 import { addEventDetails, resetForm } from '../../../redux/actions';
 
 // Dynamic Component Data
+import { EventIntensityData } from '../../../data/componentdata';
+import { EventHeadacheData } from '../../../data/componentdata';
+import { EHeadacheDurationData } from '../../../data/componentdata';
 import { waterConsumptionData } from '../../../data/componentdata';
 import { physicalActivityData } from '../../../data/componentdata';
 
 // FORM COMPONENTS
-import EventIntensity from './EventIntensity';
-import EventHeadache from './headache/EventHeadache';
+import EventIntensity from '../SelectWithOptions';
 // SelectWithOptions Components
-import WaterConsumption from '../../SelectWithOptions';
-import PhysicalActivity from '../../SelectWithOptions';
+import EventHeadache from '../SelectWithOptions';
+import EHeadacheDuration from '../SelectWithOptions';
+import WaterConsumption from '../SelectWithOptions';
+import PhysicalActivity from '../SelectWithOptions';
 
 const EventDetailsContainer = (props) => {
     const [eventDetails, setEventDetails] = useState({
@@ -39,13 +43,13 @@ const EventDetailsContainer = (props) => {
     // console.log("*** FORM STATE *** : ", eventDetails)
 
     return (
-        <div className="event-details-container">
+        <div className="event-details-form-container">
             <form onSubmit={handleSubmit} action="">
-                <EventIntensity eventDetails={eventDetails} setEventDetails={setEventDetails} />
-                <EventHeadache eventDetails={eventDetails} setEventDetails={setEventDetails} />
-                {/* WaterConsumption is rendered with Dynamic reusability in mind.  However, considering the way I am adding measurements to the rendered options content, More work would need done to make this truly reusable. */}
+                <EventIntensity componentData={EventIntensityData} eventDetails={eventDetails} setEventDetails={setEventDetails} />
+                <EventHeadache componentData={EventHeadacheData} eventDetails={eventDetails} setEventDetails={setEventDetails} />
+                {eventDetails.headache !== 'select' && 
+                    eventDetails.headache !== 'No' && <EHeadacheDuration componentData={EHeadacheDurationData} eventDetails={eventDetails} setEventDetails={setEventDetails} />}
                 <WaterConsumption componentData={waterConsumptionData} eventDetails={eventDetails} setEventDetails={setEventDetails} />
-                {/* PhysicalActivity Component is First Rendered REUSABLE COMPONENT! */}
                 <PhysicalActivity componentData={physicalActivityData} eventDetails={eventDetails} setEventDetails={setEventDetails} />
                 <br/><button className="edc-button">SUBMIT</button>
             </form>
