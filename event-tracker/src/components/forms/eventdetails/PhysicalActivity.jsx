@@ -14,16 +14,13 @@ const PhysicalActivity = (props) => {
         })
     }
 
-    // generate dynamic array
-    const max = Array.from({length: maxOptions+1}, (_, i) => `${i} hours`)
-
     return (
         <>
             <label htmlFor={componentName}>{question} </label>
             <select required onChange={handleChange} name={componentName} id={componentName} value={props.eventDetails[componentName]} >
                 <option value="select" defaultValue >Please Select...</option>
-                {max.map(num => {
-                    return <option key={num} value={num}>{num}</option> 
+                {maxOptions.map(el => {
+                    return <option key={el} value={el}>{el}</option> 
                 })}
             </select><br/>
         </>
